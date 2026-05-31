@@ -1,0 +1,6 @@
+*.log
+*.tar
+*.zip
+.git
+.idea
+.vscode

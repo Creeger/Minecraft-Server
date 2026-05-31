@@ -1,0 +1,16 @@
+FROM alpine
+
+# Download rsync and mcrcon and then clean up mcrcon data after it is build into an executable
+RUN apk add --no-cache rsync git build-base \
+    && git clone https://github.com/Tiiffi/mcrcon.git \
+    && cd mcrcon \
+    && make \
+    && mv mcrcon /usr/local/bin/ \
+    && cd .. && rm -rf mcrcon
+
+
+COPY backup/backup.sh /backup.sh
+
+RUN chmod +x /backup.sh
+
+CMD ["sh", "/backup.sh"]
