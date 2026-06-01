@@ -1,5 +1,4 @@
 #!/bin/sh
-#cd /server
 
 echo "Starting Minecraft server..."
 

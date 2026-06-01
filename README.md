@@ -9,7 +9,7 @@ The project has the following directory structure:
 ```text
 project/
 ├── backups/
-|   ├── backup.sh
+|   └── backup.sh
 ├── BackUps/
 ├── Server/
 │   
@@ -17,7 +17,7 @@ project/
 ├── DockerFile
 ├── DockerFile.backup
 ├── docker-compose.yml
-├── server_variables.env
+└── server_variables.env
 ```
 
 
@@ -28,6 +28,7 @@ For the user the only relevant things are the Server directory and the server_va
 
 * **server_variables.env:**
     This folder lets the user decide the value of different values for the server. Currently the variables that are editable by the user through this file are listed below along with their default value:
+    
       * RCON_PASSWORD=rconnPass (it is, of course, strongly encouraged to change this value)
       * ALLOW_FLIGHT=true
       * DIFFICULTY=hard

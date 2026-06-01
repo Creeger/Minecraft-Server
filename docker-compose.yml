@@ -1,18 +1,16 @@
 services:
-  atm9:
+  mcServer:
     build:  # Use the DockerFile in the same directory as I am
       context: .
       dockerfile: DockerFile
       
-      
-    container_name: atm9
+    container_name: mcServer
 
     ports:
       - "25565:25565"
   
     volumes:
     - ./Server:/server # Save data from host Server/ directory to container /server directory
-    #- ./server_variables.txt:/run/secrets/server_variables:ro
 
     env_file:
     - server_variables.env
@@ -27,14 +25,12 @@ services:
     container_name: atm9-backup
 
     depends_on: 
-      - atm9
-    #environment:
-    #  RCON_PASSWORD: ${RCON_PASSWORD}
+      - mcServer
 
     volumes:
       - ./Server:/server:ro # :ro = read only
       - ./BackUps/:/BackUps
-      #- ./server_variables.txt:/run/secrets/server_variables:ro
+
 
     env_file:
     - server_variables.env
