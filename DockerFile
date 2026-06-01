@@ -1,12 +1,14 @@
 # Image name of Java 17 maintained by the eclipse foundation
 FROM eclipse-temurin:17-jre 
 
-# Internal container file
-WORKDIR /server  
+
+COPY boot.sh /boot.sh
+
+RUN chmod +x /boot.sh
 
 # This line is not needed as the /Server directory is mounted on a volume in the compose file
 #COPY ./Server /server
 
 EXPOSE 25565
 
-CMD ["sh", "/server/boot.sh"]
+CMD ["sh", "/boot.sh"]

@@ -3,7 +3,7 @@
 
 echo "Starting Minecraft server..."
 
-sh ./server/startserver.sh &
+sh /server/startserver.sh &
 SERVER_PID=$!
 
 echo "Server PID: $SERVER_PID"
@@ -34,5 +34,8 @@ while true; do
 done
 
 echo "RCON enabled"
+echo "RCON variables set"
+echo "Allow flight set to ${ALLOW_FLIGHT}"
+echo "Difficulty set to ${DIFFICULTY}"
 
 wait $SERVER_PID
