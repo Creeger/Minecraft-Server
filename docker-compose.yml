@@ -1,10 +1,10 @@
 services:
-  mcServer:
+  mcserver:
     build:  # Use the DockerFile in the same directory as I am
       context: .
       dockerfile: DockerFile
       
-    container_name: mcServer
+    container_name: mcserver
 
     ports:
       - "25565:25565"
@@ -22,10 +22,10 @@ services:
       context: .
       dockerfile: DockerFile.backup
     
-    container_name: atm9-backup
+    container_name: mcserver-backup
 
     depends_on: 
-      - mcServer
+      - mcserver
 
     volumes:
       - ./Server:/server:ro # :ro = read only

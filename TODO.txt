@@ -1,5 +1,0 @@
-1. check if it work to launch both containers at once
-2. check that backups work
-3. change atm9 to a more general name
-4. upload on github
-5. write read me for github
