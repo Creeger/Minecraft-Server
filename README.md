@@ -29,9 +29,12 @@ For the user the only relevant things are the Server directory and the server_va
 * **server_variables.env:**
     This folder lets the user decide the value of different values for the server. Currently the variables that are editable by the user through this file are listed below along with their default value:
     
-      * RCON_PASSWORD=rconnPass (it is, of course, strongly encouraged to change this value)
+      * RCON_PASSWORD=rconnPass
       * ALLOW_FLIGHT=true
       * DIFFICULTY=hard
+      * SERVER_RAM=8G 
+
+    The *G* in the SERVER_RAM variables stands for Gigabytes. It's also possible to use Megabytes, example: -Xms2500M (equivalent to -Xms2.5G). The default is set to 8G, and adjust more or less is needed.
 
 
 To launch the server, make sure Docker is installed and use the following Docker command:
